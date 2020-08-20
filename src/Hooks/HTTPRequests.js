@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 
 export function useAxiosGet(url){
-    const [products, setProducts] = useState({
+    const [request, setRequest] = useState({
         loading: false,
         data: null,
         error: false
@@ -11,14 +11,14 @@ export function useAxiosGet(url){
      // useEffect() --> only fetch data when there's change to url
     useEffect(() => {
         //page is loading 
-        setProducts({
+        setRequest({
             loading: true,
             data: null,
             error: false
         })
         axios.get(url)
             .then(response =>{
-                setProducts({
+                setRequest({
                     //page finished loading
                     loading: false,
                     data: response.data,
@@ -26,7 +26,7 @@ export function useAxiosGet(url){
                 })
             })
             .catch(() => {
-                setProducts({
+                setRequest({
                     loading: false,
                     data: null,
                     error: true
@@ -34,6 +34,6 @@ export function useAxiosGet(url){
             })
     }, [url])
 
-    return products
+    return request
 }
 
