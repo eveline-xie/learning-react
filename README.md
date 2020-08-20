@@ -1,3 +1,6 @@
+This is a project I created following the tutorial made by Quentin Watt: https://www.youtube.com/watch?v=mACw_G-okPE&list=WL&index=2&t=372s
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
